@@ -18,4 +18,4 @@ Utilizing these techniques, we can build a powerful SEO teg generator, and possi
 
 ## Current things to work on:
 
-- Setup python environment for NLP
+- Setup python environment for NLP using nltk
