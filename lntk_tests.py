@@ -9,6 +9,8 @@ from nltk.stem import LancasterStemmer
 from nltk.stem import WordNetLemmatizer
 # importing stopwords from nltk library
 from nltk import word_tokenize
+# importing chunk library from nltk
+from nltk import ne_chunk
 
 
 def test():
@@ -51,11 +53,29 @@ def test():
     print(f'Original Text: {original}')
     print(f'Removed Stop Words: {sw}')
 
+    print('Part of speech tagging (POS)...')
     text = "vote to choose a particular man or a group(party) to represent them in parliament"
     # Tokenize the text
     tex = word_tokenize(text)
     for token in tex:
         print(nltk.pos_tag([token]))
+
+    print('Named entity recognition...')
+    text = "Google’s CEO Sundar Pichai introduced the new Pixel at Minnesota Roi Centre Event"
+    # tokenize and POS Tagging before doing chunk
+    token = word_tokenize(text)
+    tags = nltk.pos_tag(token)
+    chunk = ne_chunk(tags)
+    print(chunk)
+
+    print('Chunking...')
+    text = "We saw the yellow dog"
+    token = word_tokenize(text)
+    tags = nltk.pos_tag(token)
+    reg = "NP: { < DT >? < JJ > * < NN >}"
+    a = nltk.RegexpParser(reg)
+    result = a.parse(tags)
+    print(result)
 
 
 if __name__ == '__main__':
