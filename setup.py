@@ -10,7 +10,7 @@ with open('LICENSE') as f:
 setup(
     name='tag-fusion',
     version='0.0.1',
-    description='Sample package for Python-Guide.org',
+    description='An SEO Tag Generator.',
     long_description=readme,
     author='William Boeckman',
     author_email='wmboeckman@gmail.com',
