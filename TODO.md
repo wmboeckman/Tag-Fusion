@@ -15,7 +15,3 @@ The best way I thought about generating usable keywords out of a body of text wi
 - **Chunking**, or grouping pieces of relevant information together (ex: `.`)
 
 Utilizing these techniques, we can build a powerful SEO teg generator, and possibly even more, using this tool!
-
-## Current things to work on:
-
-- Setup python environment for NLP using nltk
