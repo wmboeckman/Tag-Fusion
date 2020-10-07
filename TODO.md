@@ -6,7 +6,7 @@ The first part of the application will process a given dataset of text, given an
 
 The best way I thought about generating usable keywords out of a body of text without having to keep updating the code for each new edge-case i find was to use [**Natural Language Processing(NLP)**](https://www.kdnuggets.com/2020/05/text-mining-python-steps-examples.html):
 - **Tokenize** the given body of text (ex: `"Hello world!"` -> `['Hello','world','!']`)
-- Find **frequency disribution** from tokens (ex: `"One fish, two fish."` -> `['one': 1,'fish': 2,',': 1,'two': 1,'.': 1]`)
+- Find **frequency distribution** from tokens (ex: `"One fish, two fish."` -> `['one': 1,'fish': 2,',': 1,'two': 1,'.': 1]`)
 - **Stemming**, or finding the root word (ex: `"wait","waited","waiting"` -> `"wait"`) Use Porter Stemming if possible, although Lancaster Stemming is more aggressive if needed.
 - **Lemmatization**, or the process of converting a word to its 'base' form (ex: `"gone","going","went"` -> `"go"`) Its kinda like Stemming, but doesnt require a 'root' word. Implemented in python by using Wordnet Lemmatizer, Spacy Lemmatizer, TextBlob, Stanford CoreNLP.
 - **Stop Words**, or the most common words in a language (ex: `"I was at the giant rock."` -> `["I","was","at","the"]`) These are removed to save processing power and to prevent them from becoming an SEO tag.
@@ -15,3 +15,17 @@ The best way I thought about generating usable keywords out of a body of text wi
 - **Chunking**, or grouping pieces of relevant information together (ex: `.`)
 
 Utilizing these techniques, we can build a powerful SEO teg generator, and possibly even more, using this tool!
+
+## The Plan, _but explained._
+
+So, utilizing the above NLP functions, how can we generate usable SEO tags?
+
+One basic strategy would be to run these functions in order:
+
+- Remove stop words. Used to rid the text of 'useless' data.
+- Named entity recognition, save in list for later.
+- Tokenize rest of text.
+- Find top `n` frequency distribution from tokens. Save for later.
+- Part of speech tagging (only keep `NN`).
+
+Return the names, token frequency distribution, and part of speech tagging data!
