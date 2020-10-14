@@ -8,4 +8,4 @@ def cli(gui):
     if gui:
         GUIApp()
     else:
-        pass  # Continue through to rest fo cli app.
+        pass  # Continue through to rest of cli app.
