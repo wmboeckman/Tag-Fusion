@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 nltk = "==3.5"
 numpy = "==1.19.2"
+click = "~=7.1.2"
 
 [requires]
 python_version = "3.8"
